@@ -5,8 +5,43 @@ from .models import Member
 
 
 def index(request):
+	return render(request, 'polls/index.html', {"alert":""})
+
+def single(request):
+	return render(request, 'polls/single.html', {"alert":""})
+
+def about(request):
+	return render(request, 'polls/about.html', {"alert":""})	
+
+def contact(request):
+	return render(request, 'polls/contact.html', {"alert":""})
+
+def gallery(request):
+	return render(request, 'polls/gallery.html', {"alert":""})
+
+def icons(request):
+	return render(request, 'polls/icons.html', {"alert":""})
+
+def order(request):
+	return render(request, 'polls/order.html', {"alert":""})
+
+def membership(request):
+	return render(request, 'polls/membership.html', {"alert":""})
+
+def slot(request):
+	return render(request, 'polls/slot.html', {"alert":""})	
+
+def test(request):
+	return render(request, 'polls/test.html', {"alert":""})
+
+def typography(request):
+	return render(request, 'polls/typography.html', {"alert":""})
+
+def blog(request):
 	return render(request, 'polls/blog.html', {"alert":""})
 
+def registered(request):
+	return render(request, 'polls/registered.html', {"alert":""})
 
 def add_member(request):   #新增餐廳資料的函式
 	c = ""
@@ -26,10 +61,10 @@ def add_member(request):   #新增餐廳資料的函式
 		m = Member(Member_account = account, Member_name = name, Member_email = email, Member_password = password, Member_phone = phone, Member_address = address)  #新建Restaurant類別
 		m.save()  #儲存
 
-	return render(request, 'polls/blog.html', {"alert":c})
+	return render(request, 'polls/registered.html', {"alert":c})
 
 def login(request):
-	return render(request, 'polls/login.html', {"alert":""})
+	return render(request, 'polls/blog.html', {"alert":""})
 
 def login_check(request):
 
@@ -41,6 +76,6 @@ def login_check(request):
 		if account == i.Member_account and password == i.Member_password :
 			c = ""
 
-	return render(request, 'polls/login.html', {"alert":c})
+	return render(request, 'polls/membership.html', {"alert":c})
 
 

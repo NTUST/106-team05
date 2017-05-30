@@ -1,0 +1,544 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Harvest Life an agriculture Category Bootstrap responsive Website Template | Typography :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Harvest Life Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Playball&amp;subset=latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+	$(function() {
+		 $(".cs").hide();
+		 $(".code > c2").click(function() {
+		  $(this)
+		      .parent()
+		      .find(".cs")
+		      .slideToggle();
+		 });
+		});
+</script> 
+<script>
+	function get_current_time(){
+		var Today = new Date();
+		document.getElementById('time').value = Today;
+	}
+</script>
+<style>
+
+.bd {
+	text-align:center;
+}
+.container_slot {
+	margin:0 auto;
+	width:266px;
+}
+.slot-wrapper {
+	 border: 1px solid #000000;
+}
+.slot {
+	background:url("images/reel_normal.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+	width:86px;
+	height:70px;
+	float:left;
+	border:1px solid #000;
+	background-position:0 4px;
+}
+.motion {
+	background:url("images/reel_blur.png") repeat-y; /*Taken from http://www.swish-designs.co.uk*/
+}
+button {
+	display:block;
+	width:138px;
+	height:33px;
+	margin:20px 60px;
+	font-size:16px;
+	cursor:pointer;
+}
+#result {
+	margin:20px 0;
+	font-size:18px;
+	font-weight:bold;
+	height:22px;
+}
+.credits {
+	font-size:15px;
+	margin-top:20px;
+}
+.credits .browsers {
+	font-style:italic;
+	font-size:14px;
+	color:#777;
+	margin-top:4px;
+}
+.clear {
+	clear:both;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="jquery.spritely.js"></script>
+<script src="jquery.backgroundPosition.js"></script>
+<script src="slot.js"></script>
+</head>
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body onload = "get_current_time()">
+	<!-- banner -->
+	<div class="banner about-banner">
+		<div class="header">
+			<div class="container">
+			<h3 align="right" align="top" style="color:white;"><a href="{% url 'juice:blog' %}" style="color:white;">登入</a>/<a href="{% url 'juice:registered' %}" style="color:white;">註冊</a><h3>
+				<div class="header-left">
+					<div class="w3layouts-logo">
+						<h1>
+							<a href="{% url 'juice:index' %}">Juice <span><sup>愛喝</sup></span></a>
+						</h1>
+					</div>
+				</div>
+				<div class="header-right">
+					<div class="agileinfo-social-grids">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-rss"></i></a></li>
+							<li><a href="#"><i class="fa fa-vk"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="container">
+			
+				<div class="top-nav">
+						<nav class="navbar navbar-default">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li><a href="{% url 'juice:index' %}">首頁</a></li>
+									<li><a href="{% url 'juice:about' %}">關於我們</a></li>
+									<ul class="dropdown-menu">
+									         <li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}"></a></li>
+											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">流程資訊</a></li>
+											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">健康週報</a></li>          
+									</ul>
+									<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="active list-border" >活動專區<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">促銷優惠</a></li>
+											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">集點專區</a></li>
+											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">小遊戲獲贈大杯飲料</a></li>                
+										</ul>
+									</li>								
+									<li><a href="{% url 'juice:gallery' %}">蔬果介紹</a></li>
+									<li><a href="{% url 'juice:blog' %}">會員專區</a></li>
+									<li><a href="{% url 'juice:blog' %}">我想下訂單</a></li>
+								</ul>	
+								<div class="clearfix"> </div>
+							</div>	
+						</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="about-heading" >	
+		<div class="container" align="center">
+			<h2>訂購飲料</h2>
+			<p style="color: #212121;font-size: 1.5em;margin: 0 0 1em 0;letter-spacing: 1px;font-family: 'Raleway', sans-serif;">歡迎訂購我們JUICE愛喝，請點選以下文字選擇蔬果種類，選完別忘記拉拉霸試試手氣喔</p><br>
+		</div>
+	</div>
+	<!-- //banner -->
+	<div class="blog">
+		<div class="container">
+			<div class="agileinfo-contact-form-grid">
+					<form id="fomr1" name="fomr1" action="" method="post">			
+					<table id="mytable" width = 100% align="center" cellpadding="0" cellspacing="0" >
+					<script>
+					function myFunction(string,s) {
+						if (document.getElementById(string).alt == "1") {
+							document.getElementById("15").src = "{% static 'images/15.jpg' %}";
+							document.getElementById("16").src = "{% static 'images/16.jpg' %}";
+							document.getElementById("17").src = "{% static 'images/17.jpg' %}";
+							document.getElementById("18").src = "{% static 'images/18.jpg' %}";
+							document.getElementById("19").src = "{% static 'images/19.jpg' %}";
+							document.getElementById("20").src = "{% static 'images/20.jpg' %}";
+							document.getElementById("21").src = "{% static 'images/21.jpg' %}";
+							document.getElementById("22").src = "{% static 'images/22.jpg' %}";
+							document.getElementById("23").src = "{% static 'images/23.jpg' %}";
+							document.getElementById("24").src = "{% static 'images/24.jpg' %}";
+							document.getElementById("25").src = "{% static 'images/25.jpg' %}";
+							document.getElementById("26").src = "{% static 'images/26.jpg' %}";
+
+							document.getElementById("15").alt = "1";
+							document.getElementById("16").alt = "1";
+							document.getElementById("17").alt = "1";
+							document.getElementById("18").alt = "1";
+							document.getElementById("19").alt = "1";
+							document.getElementById("20").alt = "1";
+							document.getElementById("21").alt = "1";
+							document.getElementById("22").alt = "1";
+							document.getElementById("23").alt = "1";
+							document.getElementById("24").alt = "1";
+							document.getElementById("25").alt = "1";
+							document.getElementById("26").alt = "1";
+							document.getElementById(string).src = "{% static \'image2-check/"+string+".jpg\' %}";
+							document.getElementById(string).alt = "2";
+							document.getElementById(s+"a").innerHTML = document.getElementById(string).name;
+
+						}else{
+
+							document.getElementById(string).src = "images/"+string+".jpg";
+							document.getElementById(string).alt = "1";
+							document.getElementById(s+"a").innerHTML = "按此選擇蔬菜1";
+						}
+					    
+					}
+					function myFunction2(string,s) {
+						if (document.getElementById(string+"a").alt == "1") {
+							document.getElementById("15a").src = "{% static 'images/15.jpg' %}";
+							document.getElementById("16a").src = "{% static 'images/16.jpg' %}";
+							document.getElementById("17a").src = "{% static 'images/17.jpg' %}";
+							document.getElementById("18a").src = "{% static 'images/18.jpg' %}";
+							document.getElementById("19a").src = "{% static 'images/19.jpg' %}";
+							document.getElementById("20a").src = "{% static 'images/20.jpg' %}";
+							document.getElementById("21a").src = "{% static 'images/21.jpg' %}";
+							document.getElementById("22a").src = "{% static 'images/22.jpg' %}";
+							document.getElementById("23a").src = "{% static 'images/23.jpg' %}";
+							document.getElementById("24a").src = "{% static 'images/24.jpg' %}";
+							document.getElementById("25a").src = "{% static 'images/25.jpg' %}";
+							document.getElementById("26a").src = "{% static 'images/26.jpg' %}";
+
+							document.getElementById("15a").alt = "1";
+							document.getElementById("16a").alt = "1";
+							document.getElementById("17a").alt = "1";
+							document.getElementById("18a").alt = "1";
+							document.getElementById("19a").alt = "1";
+							document.getElementById("20a").alt = "1";
+							document.getElementById("21a").alt = "1";
+							document.getElementById("22a").alt = "1";
+							document.getElementById("23a").alt = "1";
+							document.getElementById("24a").alt = "1";
+							document.getElementById("25a").alt = "1";
+							document.getElementById("26a").alt = "1";
+							document.getElementById(string+"a").src = "image2-check/"+string+".jpg";
+							document.getElementById(string+"a").alt = "2";
+							document.getElementById(s+"b").innerHTML = document.getElementById(string).name;
+
+						}else{
+
+							document.getElementById(string+"a").src = "images/"+string+".jpg";
+							document.getElementById(string+"a").alt = "1";
+							document.getElementById(s+"b").innerHTML = "按此選擇蔬菜2";
+						}
+					    
+					}
+					function myFunction3(string,s) {
+						if (document.getElementById(string).alt == "1") {
+							document.getElementById("g1").src = "images/g1.jpg";
+							document.getElementById("g2").src = "images/g2.jpg";
+							document.getElementById("g3").src = "images/g3.jpg";
+							document.getElementById("g4").src = "images/g4.jpg";
+							document.getElementById("g6").src = "images/g6.jpg";
+							document.getElementById("1").src = "images/1.jpg";
+							document.getElementById("5").src = "images/5.jpg";
+							document.getElementById("8").src = "images/8.jpg";
+							document.getElementById("9").src = "images/9.jpg";
+							document.getElementById("10").src = "images/10.jpg";
+							document.getElementById("11").src = "images/11.jpg";
+							document.getElementById("12").src = "images/12.jpg";
+							document.getElementById("13").src = "images/13.jpg";
+							document.getElementById("14").src = "images/14.jpg";
+
+							document.getElementById("g1").alt = "1";
+							document.getElementById("g2").alt = "1";
+							document.getElementById("g3").alt = "1";
+							document.getElementById("g4").alt = "1";
+							document.getElementById("g6").alt = "1";
+							document.getElementById("1").alt = "1";
+							document.getElementById("5").alt = "1";
+							document.getElementById("8").alt = "1";
+							document.getElementById("9").alt = "1";
+							document.getElementById("10").alt = "1";
+							document.getElementById("11").alt = "1";
+							document.getElementById("12").alt = "1";
+							document.getElementById("13").alt = "1";
+							document.getElementById("14").alt = "1";
+
+							document.getElementById(string).src = "{% static \'image2-check/"+string+".jpg\' %}";
+							document.getElementById(string).alt = "2";
+							document.getElementById(s+"c").innerHTML = document.getElementById(string).name;
+
+						}else{
+
+							document.getElementById(string).src = "images/"+string+".jpg";
+							document.getElementById(string).alt = "1";
+							document.getElementById(s+"c").innerHTML = "按此選擇水果1";
+						}
+					    
+					}
+					function myFunction4(string,s) {
+						if (document.getElementById(string+"a").alt == "1") {
+							document.getElementById("g1a").src = "images/g1.jpg";
+							document.getElementById("g2a").src = "images/g2.jpg";
+							document.getElementById("g3a").src = "images/g3.jpg";
+							document.getElementById("g4a").src = "images/g4.jpg";
+							document.getElementById("g6a").src = "images/g6.jpg";
+							document.getElementById("1a").src = "images/1.jpg";
+							document.getElementById("5a").src = "images/5.jpg";
+							document.getElementById("8a").src = "images/8.jpg";
+							document.getElementById("9a").src = "images/9.jpg";
+							document.getElementById("10a").src = "images/10.jpg";
+							document.getElementById("11a").src = "images/11.jpg";
+							document.getElementById("12a").src = "images/12.jpg";
+							document.getElementById("13a").src = "images/13.jpg";
+							document.getElementById("14a").src = "images/14.jpg";
+
+							document.getElementById("g1a").alt = "1";
+							document.getElementById("g2a").alt = "1";
+							document.getElementById("g3a").alt = "1";
+							document.getElementById("g4a").alt = "1";
+							document.getElementById("g6a").alt = "1";
+							document.getElementById("1a").alt = "1";
+							document.getElementById("5a").alt = "1";
+							document.getElementById("8a").alt = "1";
+							document.getElementById("9a").alt = "1";
+							document.getElementById("10a").alt = "1";
+							document.getElementById("11a").alt = "1";
+							document.getElementById("12a").alt = "1";
+							document.getElementById("13a").alt = "1";
+							document.getElementById("14a").alt = "1";
+							document.getElementById(string+"a").src = "{% static \'image2-check/"+string+".jpg\' %}";
+							document.getElementById(string+"a").alt = "2";
+							document.getElementById(s+"d").innerHTML = document.getElementById(string).name;
+
+						}else{
+
+							document.getElementById(string+"a").src = "{% static \'images/"+string+".jpg\' %}";
+							document.getElementById(string+"a").alt = "1";
+							document.getElementById(s+"d").innerHTML = "按此選擇水果2";
+						}
+					    
+					}
+					</script>
+						  <tr>
+						    <td width=15% class="td01"><h2>蔬菜</h2></td>
+						    <td width=25% class="td01"></td>
+						    <td width=15% class="td01"><h2>水果</h2></td>
+						    <td width=25% class="td01"></td>
+						    <td width=20% class="td01"><h2>數量</h2></td>
+						  </tr>
+						  <tr>
+
+						    <td align="top" id = "101"><div class="code">
+								<c2 id="1a">按此選擇蔬菜1</c2>
+								<pre class="cs"><img id="15" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction('15','1')"/><br><img id="16" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction('16','1')"/><br><img id="17" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction('17','1')"/><br><img id="18" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction('18','1')"/><br><img id="19" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction('19','1')"/><br><img id="20" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction('20','1')"/><br><img id="21" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction('21','1')"/><br><img id="22" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction('22','1')"/><br><img id="23" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction('23','1')"/><br><img id="24" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction('24','1')"/><br><img id="25" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction('25','1')"/><br><img id="26" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction('26','1')"/></pre>
+							</div></td>
+						    <td align="top" id = "102"><div class="code">
+								<c2 id="1b">按此選擇蔬菜2</c2>
+								<pre class="cs"><img id="15a" name = "菠菜" src="{% static 'images/15.jpg' %}"" alt="1" height = "100px" onclick="myFunction2('15','1')"/><br><img id="16a" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction2('16','1')"/><br><img id="17a" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction2('17','1')"/><br><img id="18a" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('18','1')"/><br><img id="19a" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('19','1')"/><br><img id="20a" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('20','1')"/><br><img id="21a" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('21','1')"/><br><img id="22a" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('22','1')"/><br><img id="23a" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('23','1')"/><br><img id="24a" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('24','1')"/><br><img id="25a" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('25','1')"/><br><img id="26a" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction2('26','1')"/></pre>
+							</div></td>
+						    <td align="top" id = "103"><div class="code">
+								<c2 id="1c">按此選擇水果1</c2>
+								<pre class="cs" ><img id="g6" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction3('g6','1')"/><br><img id="g1" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction3('g1','1')"/><br><img id="g2" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction3('g2','1')"/><br><img id="g3" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction3('g3','1')"/><br><img id="g4" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction3('g4','1')"/><br><img id="1" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction3('1','1')"/><br><img id="5" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction3('5','1')"/><br><img id="8"  name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction3('8','1')"/><br><img id="9" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction3('9','1')"/><br><img id="10" name= "鳳梨" src="images/10.jpg" alt="1" height = "100px" onclick="myFunction3('10','1')"/><br><img id="11" name= "芒果" src="images/11.jpg" alt="1" height = "100px" onclick="myFunction3('11','1')"/><br><img id="12" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction3('12','1')"/><br><img id="13" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction3('13','1')"/><br><img id="14" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction3('14','1')"/></pre>
+							</div></td>
+						    <td align="top" id = "104"><div class="code">
+								<c2 id="1d">按此選擇水果2</c2>
+								<pre class="cs"><img id="g6a" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction4('g6','1')"/><br><img id="g1a" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction4('g1','1')"/><br><img id="g2a" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction4('g2','1')"/><br><img id="g3a" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction4('g3','1')"/><br><img id="g4a" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction4('g4','1')"/><br><img id="1a" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction4('1','1')"/><br><img id="5a" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction4('5','1')"/><br><img id="8a" name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction4('8','1')"/><br><img id="9a" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction4('9','1')"/><br><img id="10a" name= "鳳梨"  src="images/10.jpg" alt="1" height = "100px" onclick="myFunction4('10','1')"/><br><img id="11a" src="images/11.jpg" name= "芒果" alt="1" height = "100px" onclick="myFunction4('11','1')"/><br><img id="12a" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction4('12','1')"/><br><img id="13a" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction4('13','1')"/><br><img id="14a" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction4('14','1')"/></pre>
+							</div></td>
+						    <td>
+						    <input name="number[]" type="number" size="12" min="1" value="1" id= "number[]">
+						    </td>
+						  </tr>
+						  <tr>
+
+						    <td align="top" id = "101"><div class="code">
+								<c2 id="2a">按此選擇蔬菜1</c2>
+								<pre class="cs"><img id="15" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction('15','2')"/><br><img id="16" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction('16','2')"/><br><img id="17" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction('17','2')"/><br><img id="18" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction('18','2')"/><br><img id="19" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction('19','2')"/><br><img id="20" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction('20','2')"/><br><img id="21" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction('21','2')"/><br><img id="22" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction('22','2')"/><br><img id="23" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction('23','2')"/><br><img id="24" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction('24','2')"/><br><img id="25" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction('25','2')"/><br><img id="26" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction('26','2')"/></pre>
+							</div></td>
+						    <td align="top" id = "102"><div class="code">
+								<c2 id="2b">按此選擇蔬菜2</c2>
+								<pre class="cs"><img id="15a" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction2('15','2')"/><br><img id="16a" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction2('16','2')"/><br><img id="17a" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction2('17','2')"/><br><img id="18a" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('18','2')"/><br><img id="19a" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('19','2')"/><br><img id="20a" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('20','2')"/><br><img id="21a" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('21','2')"/><br><img id="22a" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('22','2')"/><br><img id="23a" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('23','2')"/><br><img id="24a" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('24','2')"/><br><img id="25a" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('25','2')"/><br><img id="26a" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction2('26','2')"/></pre>
+							</div></td>
+						    <td align="top" id = "103"><div class="code">
+								<c2 id="2c">按此選擇水果1</c2>
+								<pre class="cs" ><img id="g6" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction3('g6','2')"/><br><img id="g1" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction3('g1','2')"/><br><img id="g2" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction3('g2','2')"/><br><img id="g3" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction3('g3','2')"/><br><img id="g4" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction3('g4','2')"/><br><img id="1" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction3('1','2')"/><br><img id="5" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction3('5','2')"/><br><img id="8"  name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction3('8','2')"/><br><img id="9" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction3('9','2')"/><br><img id="10" name= "鳳梨" src="images/10.jpg" alt="1" height = "100px" onclick="myFunction3('10','2')"/><br><img id="11" name= "芒果" src="images/11.jpg" alt="1" height = "100px" onclick="myFunction3('11','2')"/><br><img id="12" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction3('12','2')"/><br><img id="13" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction3('13','2')"/><br><img id="14" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction3('14','2')"/></pre>
+							</div></td>
+						    <td align="top" id = "104"><div class="code">
+								<c2 id="2d">按此選擇水果2</c2>
+								<pre class="cs"><img id="g6a" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction4('g6','2')"/><br><img id="g1a" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction4('g1','2')"/><br><img id="g2a" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction4('g2','2')"/><br><img id="g3a" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction4('g3','2')"/><br><img id="g4a" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction4('g4','2')"/><br><img id="1a" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction4('1','2')"/><br><img id="5a" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction4('5','2')"/><br><img id="8a" name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction4('8','2')"/><br><img id="9a" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction4('9','2')"/><br><img id="10a" name= "鳳梨"  src="images/10.jpg" alt="1" height = "100px" onclick="myFunction4('10','2')"/><br><img id="11a" src="images/11.jpg" name= "芒果" alt="1" height = "100px" onclick="myFunction4('11','2')"/><br><img id="12a" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction4('12','2')"/><br><img id="13a" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction4('13','2')"/><br><img id="14a" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction4('14','2')"/></pre>
+							</div></td>
+						    <td>
+						    <input name="number[]" type="number" size="12" min="0" value="0" id= "number[]">
+						    </td>
+						  </tr>
+						  <tr>
+
+						    <td align="top" id = "101"><div class="code">
+								<c2 id="3a">按此選擇蔬菜1</c2>
+								<pre class="cs"><img id="15" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction('15','3')"/><br><img id="16" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction('16','3')"/><br><img id="17" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction('17','3')"/><br><img id="18" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction('18','3')"/><br><img id="19" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction('19','3')"/><br><img id="20" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction('20','3')"/><br><img id="21" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction('21','3')"/><br><img id="22" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction('22','3')"/><br><img id="23" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction('23','3')"/><br><img id="24" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction('24','3')"/><br><img id="25" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction('25','3')"/><br><img id="26" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction('26','3')"/></pre>
+							</div></td>
+						    <td align="top" id = "102"><div class="code">
+								<c2 id="3b">按此選擇蔬菜2</c2>
+								<pre class="cs"><img id="15a" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction2('15','3')"/><br><img id="16a" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction2('16','3')"/><br><img id="17a" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction2('17','3')"/><br><img id="18a" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('18','3')"/><br><img id="19a" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('19','3')"/><br><img id="20a" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('20','3')"/><br><img id="21a" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('21','3')"/><br><img id="22a" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('22','3')"/><br><img id="23a" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('23','3')"/><br><img id="24a" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('24','3')"/><br><img id="25a" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('25','3')"/><br><img id="26a" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction2('26','3')"/></pre>
+							</div></td>
+						    <td align="top" id = "103"><div class="code">
+								<c2 id="3c">按此選擇水果1</c2>
+								<pre class="cs" ><img id="g6" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction3('g6','3')"/><br><img id="g1" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction3('g1','3')"/><br><img id="g2" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction3('g2','3')"/><br><img id="g3" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction3('g3','3')"/><br><img id="g4" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction3('g4','3')"/><br><img id="1" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction3('1','3')"/><br><img id="5" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction3('5','3')"/><br><img id="8"  name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction3('8','3')"/><br><img id="9" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction3('9','3')"/><br><img id="10" name= "鳳梨" src="images/10.jpg" alt="1" height = "100px" onclick="myFunction3('10','3')"/><br><img id="11" name= "芒果" src="images/11.jpg" alt="1" height = "100px" onclick="myFunction3('11','3')"/><br><img id="12" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction3('12','3')"/><br><img id="13" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction3('13','3')"/><br><img id="14" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction3('14','3')"/></pre>
+							</div></td>
+						    <td align="top" id = "104"><div class="code">
+								<c2 id="3d">按此選擇水果2</c2>
+								<pre class="cs"><img id="g6a" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction4('g6','3')"/><br><img id="g1a" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction4('g1','3')"/><br><img id="g2a" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction4('g2','3')"/><br><img id="g3a" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction4('g3','3')"/><br><img id="g4a" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction4('g4','3')"/><br><img id="1a" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction4('1','3')"/><br><img id="5a" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction4('5','3')"/><br><img id="8a" name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction4('8','3')"/><br><img id="9a" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction4('9','3')"/><br><img id="10a" name= "鳳梨"  src="images/10.jpg" alt="1" height = "100px" onclick="myFunction4('10','3')"/><br><img id="11a" src="images/11.jpg" name= "芒果" alt="1" height = "100px" onclick="myFunction4('11','3')"/><br><img id="12a" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction4('12','3')"/><br><img id="13a" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction4('13','3')"/><br><img id="14a" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction4('14','3')"/></pre>
+							</div></td>
+						    <td>
+						    <input name="number[]" type="number" size="12" min="0" value="0" id= "number[]">
+						    </td>
+						  </tr>
+						  <tr>
+
+						    <td align="top" id = "101"><div class="code">
+								<c2 id="4a">按此選擇蔬菜1</c2>
+								<pre class="cs"><img id="15" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction('15','4')"/><br><img id="16" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction('16','4')"/><br><img id="17" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction('17','4')"/><br><img id="18" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction('18','4')"/><br><img id="19" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction('19','4')"/><br><img id="20" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction('20','4')"/><br><img id="21" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction('21','4')"/><br><img id="22" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction('22','4')"/><br><img id="23" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction('23','4')"/><br><img id="24" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction('24','4')"/><br><img id="25" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction('25','4')"/><br><img id="26" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction('26','4')"/></pre>
+							</div></td>
+						    <td align="top" id = "102"><div class="code">
+								<c2 id="4b">按此選擇蔬菜2</c2>
+								<pre class="cs"><img id="15a" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction2('15','4')"/><br><img id="16a" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction2('16','4')"/><br><img id="17a" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction2('17','4')"/><br><img id="18a" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('18','4')"/><br><img id="19a" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('19','4')"/><br><img id="20a" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('20','4')"/><br><img id="21a" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('21','4')"/><br><img id="22a" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('22','4')"/><br><img id="23a" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('23','4')"/><br><img id="24a" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('24','4')"/><br><img id="25a" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('25','4')"/><br><img id="26a" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction2('26','4')"/></pre>
+							</div></td>
+						    <td align="top" id = "103"><div class="code">
+								<c2 id="4c">按此選擇水果1</c2>
+								<pre class="cs" ><img id="g6" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction3('g6','4')"/><br><img id="g1" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction3('g1','4')"/><br><img id="g2" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction3('g2','4')"/><br><img id="g3" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction3('g3','4')"/><br><img id="g4" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction3('g4','4')"/><br><img id="1" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction3('1','4')"/><br><img id="5" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction3('5','4')"/><br><img id="8"  name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction3('8','4')"/><br><img id="9" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction3('9','4')"/><br><img id="10" name= "鳳梨" src="images/10.jpg" alt="1" height = "100px" onclick="myFunction3('10','4')"/><br><img id="11" name= "芒果" src="images/11.jpg" alt="1" height = "100px" onclick="myFunction3('11','4')"/><br><img id="12" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction3('12','4')"/><br><img id="13" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction3('13','4')"/><br><img id="14" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction3('14','4')"/></pre>
+							</div></td>
+						    <td align="top" id = "104"><div class="code">
+								<c2 id="4d">按此選擇水果2</c2>
+								<pre class="cs"><img id="g6a" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction4('g6','4')"/><br><img id="g1a" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction4('g1','4')"/><br><img id="g2a" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction4('g2','4')"/><br><img id="g3a" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction4('g3','4')"/><br><img id="g4a" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction4('g4','4')"/><br><img id="1a" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction4('1','4')"/><br><img id="5a" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction4('5','4')"/><br><img id="8a" name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction4('8','4')"/><br><img id="9a" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction4('9','4')"/><br><img id="10a" name= "鳳梨"  src="images/10.jpg" alt="1" height = "100px" onclick="myFunction4('10','4')"/><br><img id="11a" src="images/11.jpg" name= "芒果" alt="1" height = "100px" onclick="myFunction4('11','4')"/><br><img id="12a" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction4('12','4')"/><br><img id="13a" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction4('13','4')"/><br><img id="14a" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction4('14','4')"/></pre>
+							</div></td>
+						    <td>
+						    <input name="number[]" type="number" size="12" min="0" value="0" id= "number[]">
+						    </td>
+						  </tr>
+						  <tr>
+
+						    <td align="top" id = "101"><div class="code">
+								<c2 id="5a">按此選擇蔬菜1</c2>
+								<pre class="cs"><img id="15" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction('15','5')"/><br><img id="16" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction('16','5')"/><br><img id="17" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction('17','5')"/><br><img id="18" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction('18','5')"/><br><img id="19" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction('19','5')"/><br><img id="20" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction('20','5')"/><br><img id="21" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction('21','5')"/><br><img id="22" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction('22','5')"/><br><img id="23" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction('23','5')"/><br><img id="24" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction('24','5')"/><br><img id="25" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction('25','5')"/><br><img id="26" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction('26','5')"/></pre>
+							</div></td>
+						    <td align="top" id = "102"><div class="code">
+								<c2 id="5b">按此選擇蔬菜2</c2>
+								<pre class="cs"><img id="15a" name = "菠菜" src="{% static 'images/15.jpg' %}" alt="1" height = "100px" onclick="myFunction2('15','5')"/><br><img id="16a" src="{% static 'images/16.jpg' %}" alt="1"  name = "芹菜" height = "100px" onclick="myFunction2('16','5')"/><br><img id="17a" src="{% static 'images/17.jpg' %}" alt="1"  height = "100px" name = "地瓜葉" onclick="myFunction2('17','5')"/><br><img id="18a" name = "韭菜"  src="{% static 'images/18.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('18','5')"/><br><img id="19a" name = "大白菜" src="{% static 'images/19.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('19','5')"/><br><img id="20a" name = "萵苣" src="{% static 'images/20.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('20','5')"/><br><img id="21a" name = "紫菜" src="{% static 'images/21.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('21','5')"/><br><img id="22a" name = "海帶" src="{% static 'images/22.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('22','5')"/><br><img id="23a" name = "玉米筍" src="{% static 'images/23.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('23','5')"/><br><img id="24a" name = "茼蒿" src="{% static 'images/24.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('24','5')"/><br><img id="25a" name = "青江菜" src="{% static 'images/25.jpg' %}" alt="1"  height = "100px" onclick="myFunction2('25','5')"/><br><img id="26a" src="{% static 'images/26.jpg' %}" alt="1"  name = "花椰菜" height = "100px" onclick="myFunction2('26','5')"/></pre>
+							</div></td>
+						    <td align="top" id = "103"><div class="code">
+								<c2 id="5c">按此選擇水果1</c2>
+								<pre class="cs" ><img id="g6" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction3('g6','5')"/><br><img id="g1" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction3('g1','5')"/><br><img id="g2" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction3('g2','5')"/><br><img id="g3" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction3('g3','5')"/><br><img id="g4" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction3('g4','5')"/><br><img id="1" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction3('1','5')"/><br><img id="5" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction3('5','5')"/><br><img id="8"  name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction3('8','5')"/><br><img id="9" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction3('9','5')"/><br><img id="10" name= "鳳梨" src="images/10.jpg" alt="1" height = "100px" onclick="myFunction3('10','5')"/><br><img id="11" name= "芒果" src="images/11.jpg" alt="1" height = "100px" onclick="myFunction3('11','5')"/><br><img id="12" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction3('12','5')"/><br><img id="13" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction3('13','5')"/><br><img id="14" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction3('14','5')"/></pre>
+							</div></td>
+						    <td align="top" id = "104"><div class="code">
+								<c2 id="5d">按此選擇水果2</c2>
+								<pre class="cs"><img id="g6a" name= "香蕉" src="images/g6.jpg" alt="1" height = "100px" onclick="myFunction4('g6','5')"/><br><img id="g1a" name= "奇異果" src="images/g1.jpg" alt="1" height = "100px" onclick="myFunction4('g1','5')"/><br><img id="g2a" name= "青蘋果" src="images/g2.jpg" alt="1" height = "100px" onclick="myFunction4('g2','5')"/><br><img id="g3a" name= "水蜜桃" src="images/g3.jpg" alt="1" height = "100px" onclick="myFunction4('g3','5')"/><br><img id="g4a" name= "蘋果" src="images/g4.jpg" alt="1" height = "100px" onclick="myFunction4('g4','5')"/><br><img id="1a" name= "草莓" src="images/1.jpg" alt="1" height = "100px" onclick="myFunction4('1','5')"/><br><img id="5a" name= "葡萄" src="images/5.jpg" alt="1" height = "100px" onclick="myFunction4('5','5')"/><br><img id="8a" name= "木瓜" src="images/8.jpg" alt="1" height = "100px" onclick="myFunction4('8','5')"/><br><img id="9a" src="images/9.jpg" name= "蓮霧" alt="1" height = "100px" onclick="myFunction4('9','5')"/><br><img id="10a" name= "鳳梨"  src="images/10.jpg" alt="1" height = "100px" onclick="myFunction4('10','5')"/><br><img id="11a" src="images/11.jpg" name= "芒果" alt="1" height = "100px" onclick="myFunction4('11','5')"/><br><img id="12a" name= "楊桃" src="images/12.jpg" alt="1" height = "100px" onclick="myFunction4('12','5')"/><br><img id="13a" name= "水梨" src="images/13.jpg" alt="1" height = "100px" onclick="myFunction4('13','5')"/><br><img id="14a" name= "西瓜" src="images/14.jpg" alt="1" height = "100px" onclick="myFunction4('14','5')"/></pre>
+							</div></td>
+						    <td>
+						    <input name="number[]" type="number" size="12" min="0" value="0" id= "number[]">
+						    </td>
+						  </tr>
+						</table>
+						<input type="text" id ="time" name="time">
+						<p id="total" name = "total"></p>
+						<br/>
+					<div class="about-heading">	
+						<div class="container">
+							<h2>抽獎拉霸</h2>
+						</div>
+					</div>
+					<!-- typography -->
+					<div class="bd">
+						<div class="container_slot">
+							<div class="slot-wrapper">
+								<div id="slot1" class="slot"></div>
+								<div id="slot2" class="slot"></div>
+								<div id="slot3" class="slot"></div>
+								<div class="clear"></div>
+							</div>
+							<div id="result"></div>
+							<div><button id="control">Start</button></div>
+						</div>	
+					</div>
+					<div name="test"></div>
+					<textarea name="Message" placeholder="留言" required=""></textarea>
+					<button class="btn1">送出</button>
+				</form>
+				<script>
+				
+
+					
+					</script>
+			</div>
+		</div>
+
+	</div>
+	<!-- //banner -->
+	<!-- //footer -->
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<p>© 2017 Harvest Life . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+		</div>
+	</div>
+	<!-- //copyright -->
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+</body>	
+</html>
