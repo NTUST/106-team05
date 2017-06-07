@@ -13,11 +13,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Harvest Life Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+{% load static %}
 <!-- bootstrap-css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!--// bootstrap-css -->
 <!-- css -->
-{% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
@@ -27,9 +27,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Playball&amp;subset=latin-ext" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+
+<link href="{% static 'signin/style2/style2.css' %}" rel="stylesheet">
+
 <!-- //font -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript1" src="{% static 'js2/jquery-1.10.2.min.js' %}"></script>
+<script type="text/javascript1" src=" {% static 'bootstrap2/js/bootstrap.min.js' %} "></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -47,6 +52,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  });
 </script> 
 
+<style>
+ .blog
+    {
+
+        background: url("{% static 'images/background.jpg' %}") no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     background-size: cover;
+      -o-background-size: cover;
+        opacity: 0.7;
+    }
+</style>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
@@ -56,7 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="banner about-banner">
 		<div class="header">
 			<div class="container">
-			<h3 align="right" align="top" style="color:white;"><a href="{% url 'juice:blog' %}" style="color:white;">登入</a>/<a href="{% url 'juice:registered' %}" style="color:white;">註冊</a><h3>
+			<h3 align="right" align="top" style="color:white" id = "not_login"><a href="{% url 'juice:blog' %}" style="color:white;">登入</a>/<a href="{% url 'juice:registered' %}" style="color:white;">註冊</a><h3>
+			</script>
 				<div class="header-left">
 					<div class="w3layouts-logo">
 						<h1>
@@ -94,20 +112,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="nav navbar-nav">
 									<li><a href="{% url 'juice:index' %}">首頁</a></li>
 									<li><a href="{% url 'juice:about' %}">關於我們</a></li>
-									<ul class="dropdown-menu">
-									         <li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}"></a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">流程資訊</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">健康週報</a></li>          
-									</ul>
-									<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動專區<span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">促銷優惠</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">集點專區</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">小遊戲獲贈大杯飲料</a></li>                
-										</ul>
-									</li>								
+									<li><a href="{% url 'juice:single' %}">文章專區</a></li>						
 									<li><a href="{% url 'juice:gallery' %}">產品資訊</a></li>
-									<li><a class="active list-border" href="{% url 'juice:blog' %}">訂單流程</a></li>
+									<li><a href="{% url 'juice:blog' %}">會員專區</a></li>
 									<li><a class="list-border1" href="{% url 'juice:contact' %}">聯絡我們</a></li>
 								</ul>	
 								<div class="clearfix"> </div>
@@ -118,62 +125,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //banner -->
-	<div class="about-heading" >	
+	<div class="blog">
+			
 		<div class="container">
-			<h2>登入</h2>
+		     <div class="page-header">
+		    		<CENTER><b><h1 style="color:#C63300">登入頁面</h1></b></CENTER>
+		    		<P></P>
+		    		<center><small style="color: #3A0088">我們不是勒索病毒,不會盜取你資料</small></center>
 
-		</div>
-	</div>
-	<!-- blog -->
-	<div class="blog" >
-		<div class="container">
+		    </div>
+		
+	        <div id="contentdiv" class="contcustom">
+	            <span class="fa fa-spinner bigicon"></span>
+	            <h2>Login</h2>
 			<form  action="{% url 'juice:login_check' %}" method="post">
 				{% csrf_token %}
-					<input type="text" name="account" placeholder="帳號" required="">
-					<input type="password" name="password" placeholder="密碼" required="">
-					<center></center><button class="btn1">送出</button></center>
+					<center><input id="username" type="text" name="account" placeholder="帳號" required="" onkeypress="check_values();"></center><br>
+					<center><input id="password" type="password" name="password" placeholder="密碼" required=""  onkeypress="check_values();"></center><br>
+					<center><button class="btn1">登入</button></center>
+					<span id="lock1" class="fa fa-lock medhidden redborder"></span>
 					<center><h1 style = "color:red">{{alert}}</h1></center>
-				</form>
+			</form>
 				<h4 align="center"><a href = "{% url 'juice:registered' %}">還沒有帳號？快點這裡註冊</a></h4>
-			</div>
+				</div>
+				</div>
+			
 		</div>
 	</div>
+
+
+<script type="text/javascript1">
+    jQuery(function ($) {
+        function check_values() {
+            if ($("#username").val().length != 0 && $("#password").val().length != 0) {
+                $("#button1").removeClass("hidden").animate({ left: '250px' });
+                $("#lock1").addClass("hidden").animate({ left: '250px' });
+            }
+        }
+    });
+</script>
 	<!-- //blog -->
 	<!-- footer -->
 	<div class="footer">
 		<div class="container">
 			<div class="agile-footer-grids">
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>About</h3>
-					<p>Aenean cursus dignissim porta. Quisque mattis dolor sem, nec ultrices arcu consequat vel. Phasellus sollicitudin dui diam, et scelerisque nunc venenatis non. Cras dapibus, urna et pellentesque egestas</p>
+					<h3>關於我們</h3>
+					<p>我們是一群台科大的學生,希望藉由這樣的店來推廣醜蔬果的實用性,更推廣人們不要因為外觀而唾棄食物</p>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Events</h3>
+					<h3>活動資訊</h3>
 					<ul>
-						<li>12th Aug <a href="{% url 'juice:single' %}">Curabitur</a></li>
-						<li>10th Sept <a href="{% url 'juice:single' %}">Fusce urna</a></li>
-						<li>24th Sept <a href="{% url 'juice:single' %}">Praesent</a></li>
-						<li>17th Oct <a href="{% url 'juice:single' %}">Malesuada </a></li>
-						<li>09th Dec <a href="{% url 'juice:single' %}">Cum sociis</a></li>
+						<p>歡慶Juice愛喝開幕，每次消費皆可獲得拉霸抽獎乙次!!</p>
 					</ul>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Navigation</h3>
+					<h3>站內連結</h3>
 					<ul>
-						<li class="text"><a href="{% url 'juice:about' %}">About</a></li>
-						<li class="text"><a href="{% url 'juice:typography' %}">Typography</a></li>
-						<li class="text"><a href="{% url 'juice:icons' %}">Icons</a></li>
-						<li class="text"><a href="{% url 'juice:gallery' %}">Gallery</a></li>
-						<li class="text"><a href="{% url 'juice:blog' %}">Blog</a></li>
-						<li class="text"><a href="{% url 'juice:contact' %}">Contact</a></li>
+						<li class="text"><a href="{% url 'juice:about' %}">關於我們</a></li>
+						<li class="text"><a href="{% url 'juice:gallery' %}">產品資訊</a></li>
+						<li class="text"><a href="{% url 'juice:blog' %}">登入</a></li>
+						<li class="text"><a href="{% url 'juice:contact' %}">聯絡我們</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Newsletter</h3>
-					<form action="#" method="post">
-						<input type="email" id="mc4wp_email" name="EMAIL" placeholder="Enter your email here" required="">
-						<input type="submit" value="Subscribe">
-					</form>
+					<h3>加盟專線</h3>
+					<ul>
+						<p>0800-123-456</p>
+					</ul>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -183,13 +202,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
-			<p>© 2017 Harvest Life . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+			<p>© Juice 愛喝 | Design by <a href="{% url 'juice:about' %}"> 第五組全體組員</a> </p>
 		</div>
 	</div>
 	<!-- //copyright -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {

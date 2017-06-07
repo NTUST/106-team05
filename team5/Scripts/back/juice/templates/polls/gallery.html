@@ -14,10 +14,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+{% load static %}
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!--// bootstrap-css -->
 <!-- css -->
-<{% load static %}
+
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
@@ -29,8 +30,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 <!-- //font -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -42,13 +43,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
+
+<style>
+ .about-heading
+    {
+
+        background: url("{% static 'images/bg13.jpg' %}") no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     background-size: cover;
+      -o-background-size: cover;
+        opacity: 0.9;
+    }
+</style>
+
 </head>
 <body>
+<p id = "check" style = "display:none">{{name}}</p>
 	<!-- banner -->
 	<div class="banner about-banner">
 		<div class="header">
 			<div class="container">
-			<h3 align="right" align="top" style="color:white;"><a href="blog.html" style="color:white;">登入</a>/<a href="registered.html" style="color:white;">註冊</a><h3>
+			<h3 align="right" align="top" style="color:white;" id = "not_login"><a href="{% url 'juice:blog' %}" style="color:white;">登入</a>/<a href="registered.html" style="color:white;">註冊</a><h3>
+			<h3 align="right" align="top" style="color:white" id = "logined">{{name}}您好<a href = "{% url 'juice:login_out' %}" style="color:blue;">登出</a></h3>
+			<script>
+				if(document.getElementById('check').innerHTML == ""){
+						document.getElementById('not_login').style.display = "block";
+						document.getElementById('logined').style.display = "none";
+				}
+				else{
+						document.getElementById('not_login').style.display = "none";
+						document.getElementById('logined').style.display = "block";
+				}
+
+
+			</script>
 				<div class="header-left">
 					<div class="w3layouts-logo">
 						<h1>
@@ -86,20 +115,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="nav navbar-nav">
 									<li><a href="{% url 'juice:index' %}">首頁</a></li>
 									<li><a href="{% url 'juice:about' %}">關於我們</a></li>
-									<ul class="dropdown-menu">
-									         <li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}"></a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">流程資訊</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">健康週報</a></li>          
-									</ul>
-									<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動專區<span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">促銷優惠</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">集點專區</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">小遊戲獲贈大杯飲料</a></li>                
-										</ul>
-									</li>								
+									<li><a href="{% url 'juice:single' %}">文章專區</a></li>							
 									<li><a class="active list-border" href="{% url 'juice:gallery' %}">產品資訊</a></li>
-									<li><a href="{% url 'juice:blog' %}">訂單流程</a></li>
+									<li><a href="{% url 'juice:blog' %}">會員專區</a></li>
 									<li><a class="list-border1" href="{% url 'juice:contact' %}">聯絡我們</a></li>
 								</ul>	
 								<div class="clearfix"> </div>
@@ -118,10 +136,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/15.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/15.jpg' %}" data-lightbox="example-set" data-title="濃厚的台灣氣息將充滿你的口腔">
 											<img src="{% static 'images/15.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>黃色月灣</h3>
+												<h3>台灣的珍寶</h3>
 												<h3><span>菠菜</span></h3>
 												<p> 濃厚的台灣氣息將充滿你的口腔</p>
 												<p> 一份 : 10 元</p>
@@ -133,12 +151,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/16.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/16.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/16.jpg' %}" alt="" / width="220" height = "186">
 											<figcaption>
-												<h3>披狼皮的勇士 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3><span>芹菜</span></h3>
-												<p>酸中帶甜的味道不容小覷</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -148,12 +166,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/17.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/17.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/17.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>台灣綠寶石 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3><span>地瓜葉</span></h3>
-												<p>咬一口，青春的回憶將湧心頭</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>		
 										</a>
@@ -163,12 +181,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/18.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/18.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/18.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3> <span>韭菜</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -178,12 +196,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/19.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/19.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/19.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>水果的霸主 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3><span>大白菜</span></h3>
-												<p>清脆口感，爽度破表</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -193,12 +211,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/20.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/20.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/20.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>水果的霸主 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3><span>萵苣</span></h3>
-												<p>清脆口感，爽度破表</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -208,12 +226,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/21.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/21.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/21.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3> <span>紫菜</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -223,12 +241,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/22.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/22.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/22.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3> <span>海帶</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -238,12 +256,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/23.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/23.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/23.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶</h3>
 												<h3> <span>玉米筍</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -253,12 +271,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/24.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/24.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/24.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3> <span>茼蒿</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -268,12 +286,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/25.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/25.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/25.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3> <span>青江菜</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -283,12 +301,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 gallery-grid">
 								<div class="grid">
 									<figure class="effect-roxy">
-										<a class="example-image-link" href="images/26.jpg" data-lightbox="example-set" data-title="">
+										<a class="example-image-link" href="{% static 'images/26.jpg' %}" data-lightbox="example-set" data-title="健康養生最佳選擇!!">
 											<img src="{% static 'images/26.jpg' %}" alt="" width="220" height = "186"/>
 											<figcaption>
-												<h3>拉拉山的珍寶 </h3>
+												<h3>台灣的珍寶 </h3>
 												<h3> <span>花椰菜</span></h3>
-												<p>甜蜜的滋味讓你忘卻煩惱</p>
+												<p>健康養生最佳選擇!!</p>
 												<p> 一份 : 10 元</p>
 											</figcaption>	
 										</a>
@@ -306,7 +324,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/g6.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/g6.jpg' %}" data-lightbox="example-set" data-title="濃厚的台灣氣息將充滿你的口腔">
 												<img src="{% static 'images/g6.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
 													<h3>黃色月灣</h3>
@@ -321,7 +339,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/g1.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/g1.jpg' %}" data-lightbox="example-set" data-title="酸中帶甜的味道不容小覷">
 												<img src="{% static 'images/g1.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
 													<h3>披狼皮的勇士 </h3>
@@ -336,7 +354,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/g2.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/g2.jpg' %}" data-lightbox="example-set" data-title="咬一口，青春的回憶將湧心頭">
 												<img src="{% static 'images/g2.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
 													<h3>台灣綠寶石 </h3>
@@ -351,7 +369,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/g3.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/g3.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/g3.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
 													<h3>拉拉山的珍寶 </h3>
@@ -366,7 +384,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/g4.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/g4.jpg' %}" data-lightbox="example-set" data-title="清脆口感，爽度破表">
 												<img src="{% static 'images/g4.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
 													<h3>水果的霸主 </h3>
@@ -381,10 +399,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/1.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/1.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/1.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>大湖的珍寶 </h3>
 													<h3> <span>草莓</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -396,10 +414,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/5.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/5.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/5.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>霧峰的珍寶 </h3>
 													<h3> <span>葡萄</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -411,10 +429,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/8.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/8.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/8.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>台灣的珍寶 </h3>
 													<h3> <span>木瓜</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -426,10 +444,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/9.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/9.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/9.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>台灣的珍寶 </h3>
 													<h3> <span>蓮霧</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -441,10 +459,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/10.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/10.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/10.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>台灣的珍寶 </h3>
 													<h3> <span>鳳梨</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -456,10 +474,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/11.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/11.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/11.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>愛文的珍寶 </h3>
 													<h3> <span>芒果</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -471,10 +489,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/12.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/12.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/12.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>台灣的珍寶 </h3>
 													<h3> <span>楊桃</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -486,10 +504,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/13.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/13.jpg' %}" data-lightbox="example-set" data-title="甜蜜的滋味讓你忘卻煩惱">
 												<img src="{% static 'images/13.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>台灣的珍寶 </h3>
 													<h3> <span>水梨</span></h3>
 													<p>甜蜜的滋味讓你忘卻煩惱</p>
 													<p> 一份 : 10 元</p>
@@ -501,12 +519,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-4 gallery-grid">
 									<div class="grid">
 										<figure class="effect-roxy">
-											<a class="example-image-link" href="images/14.jpg" data-lightbox="example-set" data-title="">
+											<a class="example-image-link" href="{% static 'images/14.jpg' %}" data-lightbox="example-set" data-title="香甜可口，今夏最好的選擇">
 												<img src="{% static 'images/14.jpg' %}" alt="" width="220" height = "186"/>
 												<figcaption>
-													<h3>拉拉山的珍寶 </h3>
+													<h3>台灣的珍寶 </h3>
 													<h3> <span>西瓜</span></h3>
-													<p>甜蜜的滋味讓你忘卻煩惱</p>
+													<p>香甜可口，今夏最好的選擇</p>
 													<p> 一份 : 10 元</p>
 												</figcaption>	
 											</a>
@@ -526,36 +544,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="agile-footer-grids">
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>About</h3>
-					<p>Aenean cursus dignissim porta. Quisque mattis dolor sem, nec ultrices arcu consequat vel. Phasellus sollicitudin dui diam, et scelerisque nunc venenatis non. Cras dapibus, urna et pellentesque egestas</p>
+					<h3>關於我們</h3>
+					<p>我們是一群台科大的學生,希望藉由這樣的店來推廣醜蔬果的實用性,更推廣人們不要因為外觀而唾棄食物</p>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Events</h3>
+					<h3>活動資訊</h3>
 					<ul>
-						<li>12th Aug <a href="{% url 'juice:single' %}">Curabitur</a></li>
-						<li>10th Sept <a href="{% url 'juice:single' %}">Fusce urna</a></li>
-						<li>24th Sept <a href="{% url 'juice:single' %}">Praesent</a></li>
-						<li>17th Oct <a href="{% url 'juice:single' %}">Malesuada </a></li>
-						<li>09th Dec <a href="{% url 'juice:single' %}">Cum sociis</a></li>
+						<p>歡慶Juice愛喝開幕，每次消費皆可獲得拉霸抽獎乙次!!</p>
 					</ul>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Navigation</h3>
+					<h3>站內連結</h3>
 					<ul>
-						<li class="text"><a href="{% url 'juice:about' %}">About</a></li>
-						<li class="text"><a href="{% url 'juice:typography' %}">Typography</a></li>
-						<li class="text"><a href="{% url 'juice:icons' %}">Icons</a></li>
-						<li class="text"><a href="{% url 'juice:gallery' %}">Gallery</a></li>
-						<li class="text"><a href="{% url 'juice:blog' %}">Blog</a></li>
-						<li class="text"><a href="{% url 'juice:contact' %}">Contact</a></li>
+						<li class="text"><a href="{% url 'juice:about' %}">關於我們</a></li>
+						<li class="text"><a href="{% url 'juice:gallery' %}">產品資訊</a></li>
+						<li class="text" id = "button_login"><a href="{% url 'juice:blog' %}">登入</a></li>
+						<li class="text"><a href="{% url 'juice:contact' %}">聯絡我們</a></li>
 					</ul>
+
+					<script>
+						if(document.getElementById('check').innerHTML != ""){
+							document.getElementById('button_login').style.display = "none";
+						}else{
+							document.getElementById('button_login').style.display = "block";
+						}
+					</script>
+
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Newsletter</h3>
-					<form action="#" method="post">
-						<input type="email" id="mc4wp_email" name="EMAIL" placeholder="Enter your email here" required="">
-						<input type="submit" value="Subscribe">
-					</form>
+					<h3>加盟專線</h3>
+					<ul>
+						<p>0800-123-456</p>
+					</ul>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -565,14 +585,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
-			<p>© 2017 Harvest Life . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+			<p>© Juice 愛喝 | Design by <a href="{% url 'juice:about' %}"> 第五組全體組員</a> </p>
 		</div>
 	</div>
 	<!-- //copyright -->
-		<script src="js/lightbox-plus-jquery.min.js"> </script>
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+		<script src="{% static 'js/lightbox-plus-jquery.min.js' %}"> </script>
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {

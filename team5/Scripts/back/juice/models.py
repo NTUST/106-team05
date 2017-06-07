@@ -13,11 +13,13 @@ class Member(models.Model):
 		return self.Member_name
 
 class List(models.Model):
-	customer = models.ForeignKey(Member, on_delete=models.CASCADE)
-	List_time = models.DateTimeField('date published')
+	customer = models.IntegerField(default = 0)
 	List_content1 = models.CharField(max_length=200)
 	List_content2 = models.CharField(max_length=200)
 	List_content3 = models.CharField(max_length=200, default = "")
+	price = models.IntegerField(default = 0)
+	number = models.IntegerField(default=0)
+
 
 	def __str__(self):
 		return self.List_content1 + self.List_content2 + self.List_content3 + "汁"

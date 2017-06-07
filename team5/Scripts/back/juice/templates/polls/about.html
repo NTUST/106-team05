@@ -14,10 +14,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+{% load static %}
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!--// bootstrap-css -->
 <!-- css -->
-{% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
@@ -27,9 +27,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Playball&amp;subset=latin-ext" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
 <!-- //font -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<link href="{% static 'owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css1/lightbox.css' %}">
+<link href="{% static 'css1/style.css' %}" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="{% static 'css2/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css2/icons/icons.css'%}" rel="stylesheet">
+    <link href="{% static 'css2/style.css'%}" rel="stylesheet">
+
+
+<script src="{% static 'js3/jquery-3.2.1.min.js' %}"></script>
+	
+
+<script src="{% static 'js3/bootstrap.min.js' %}"></script>
+
+
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -38,16 +57,190 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script> 
+
+<style>
+	header.main-header
+	{
+
+	    
+	    background: url("{% static 'images/back3.jpg' %}") no-repeat center center ;
+	    -webkit-background-size: cover;
+     -moz-background-size: cover;
+     background-size: cover;
+      -o-background-size: cover;
+	    min-height: 660px;
+	    padding: 10px 5px;
+	    position: relative;
+	    height: 80%;
+	    width: 100%;
+	  
+	}
+	.jumbotron{
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.2)
+    ), url("{% static 'images/bg7.jpg' %}");
+    background-size: cover;
+    color: #A42D00;
+    padding: 0;
+
+    }
+
+.up-triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid #FFE66F;
+    border-left: 122px solid transparent;
+    border-right: 122px solid transparent;
+    position: relative;
+
+}
+
+.down-triangle {
+    width: 0;
+    height: 0;
+    border-top: 200px solid #FFE66F ;
+    border-left: 122px solid transparent;
+    border-right: 122px solid transparent;
+    position: relative;
+
+}
+  
+   
+   .up-triangle div.info{
+    position:absolute;bottom:-170px;color:#FF8888;margin-left:-100px;width:200px;text-align:center;font-size: 14pt;
+    font-family: 'Arvo';
+    }
+.down-triangle div.info{
+    position:absolute;top:-170px;color:#FF8888;margin-left:-100px;width:200px;text-align:center;font-family: 'Arvo';font-size: 14pt;
+    }
+       
+    .triangles .icon{
+    font-size: 40pt;
+    color: 	#9F5000;
+    line-height: 60px;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+
+    .smpl-step {
+        margin-top: 40px;
+    }
+    .smpl-step {
+        border-bottom: solid 1px #e0e0e0;
+        padding: 0 0 10px 0;
+    }
+
+    .smpl-step > .smpl-step-step {
+        padding: 0;
+        position: relative;
+    }   
+
+    .smpl-step > .smpl-step-step .smpl-step-num {
+        font-size: 17px;
+        margin-top: -20px;
+        margin-left: 47px;
+    }
+
+    .smpl-step > .smpl-step-step .smpl-step-info {
+        font-size: 20px;
+        padding-top: 27px;
+    }
+
+    .smpl-step > .smpl-step-step > .smpl-step-icon {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        display: block;
+        background: #5CB85C;
+        top: 45px;
+        left: 50%;
+        margin-top: -35px;
+        margin-left: -15px;
+        border-radius: 50%;
+    }
+
+    .smpl-step > .smpl-step-step > .progress {
+        position: relative;
+        border-radius: 0px;
+        height: 8px;
+        box-shadow: none;
+        margin-top: 37px;
+    }
+
+   .smpl-step > .smpl-step-step > .progress > .progress-bar {
+       width: 0px;
+       box-shadow: none;
+       background: #428BCA;
+   }
+
+    .smpl-step > .smpl-step-step.complete > .progress > .progress-bar {
+        width: 100%;
+    }
+
+    .smpl-step > .smpl-step-step.active > .progress > .progress-bar {
+        width: 50%;
+    }
+
+    .smpl-step > .smpl-step-step:first-child.active > .progress > .progress-bar {
+        width: 0%;
+    }
+
+    .smpl-step > .smpl-step-step:last-child.active > .progress > .progress-bar {
+        width: 100%;
+    }
+
+    .smpl-step > .smpl-step-step.disabled > .smpl-step-icon {
+        background-color: #f5f5f5;
+    }
+
+    .smpl-step > .smpl-step-step.disabled > .smpl-step-icon:after {
+        opacity: 0;
+    }
+
+    .smpl-step > .smpl-step-step:first-child > .progress {
+        left: 50%;
+        width: 50%;
+    }
+
+    .smpl-step > .smpl-step-step:last-child > .progress {
+        width: 50%;
+    }
+
+    .smpl-step > .smpl-step-step.disabled a.smpl-step-icon {
+        pointer-events: none;
+    }
+
+
+</style>
+
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
 </head>
 <body>
+<p id = "check" style = "display:none">{{name}}</p>
 	<!-- banner -->
 	<div class="banner about-banner">
 		<div class="header">
 			<div class="container">
-			<h3 align="right" align="top" style="color:white;"><a href="blog.html" style="color:white;">登入</a>/<a href="{% url 'juice:registered' %}" style="color:white;">註冊</a><h3>
+			<h3 align="right" align="top" style="color:white;" id = "not_login"><a href="{% url 'juice:blog' %}" style="color:white">登入</a>/<a href="{% url 'juice:registered' %}" style="color:white">註冊</a><h3>
+			<h3 align="right" align="top" style="color:white" id = "logined">{{name}}您好<a href = "{% url 'juice:login_out' %}" style="color:blue;">登出</a></h3>
+			<script>
+				if(document.getElementById('check').innerHTML == ""){
+						document.getElementById('not_login').style.display = "block";
+						document.getElementById('logined').style.display = "none";
+				}
+				else{
+						document.getElementById('not_login').style.display = "none";
+						document.getElementById('logined').style.display = "block";
+				}
+
+
+			</script>
+			
 				<div class="header-left">
 					<div class="w3layouts-logo">
 						<h1>
@@ -85,20 +278,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="nav navbar-nav">
 									<li><a href="{% url 'juice:index' %}">首頁</a></li>
 									<li><a class="active list-border" href="{% url 'juice:about' %}">關於我們</a></li>
-									<ul class="dropdown-menu">
-									         <li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}"></a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">流程資訊</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">健康週報</a></li>          
-									</ul>
-									<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動專區<span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:icons' %}">促銷優惠</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">集點專區</a></li>
-											<li><a class="hvr-bounce-to-bottom" href="{% url 'juice:typography' %}">小遊戲獲贈大杯飲料</a></li>                
-										</ul>
-									</li>								
+									<li><a href="{% url 'juice:single' %}">文章專區</a></li>						
 									<li><a href="{% url 'juice:gallery' %}">產品資訊</a></li>
-									<li><a href="{% url 'juice:blog' %}">訂單流程</a></li>
+									<li><a href="{% url 'juice:blog' %}">會員專區</a></li>
 									<li><a class="list-border1" href="{% url 'juice:contact' %}">聯絡我們</a></li>
 								</ul>	
 								<div class="clearfix"> </div>
@@ -131,20 +313,239 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //a-about -->
 	<!-- different -->
-	<div class="jarallax different">
-		<div class="container">
-			<div class="w3-different-heading">
-				<h3>我們和其他人 <span>不一樣</span></h3>
-				<p>都是健康蔬果飲料，但我們提供了更多</p>
+
+	
+
+	
+
+	<header class="main-header">
+		
+		<!-- Static Header -->
+		<div class="header-text">
+			<div class="col-sm-6 fix-right">
+				<a href="index.html"><img src="{% static 'images/back2.jpg' %}" class="img-responsive" alt=""></a>
 			</div>
-			<div class="w3agile-different-info">
-				<p>我們的飲料和市面上賣的飲料非常不同，我們不只使用了完全新鮮的蔬果，還是利用了那些因為賣相而滯銷的水果製作的，不只健康好喝又環保。不只如此，我們還提供了多樣化的選擇，讓您喝到您想喝的蔬果組合，不只方便、環保、多樣又好喝。</p>
-				<div class="w3agile-button">
-					<a href="single.html">更多</a>
+			<div class="col-sm-6">
+				<div class="header-text-inner">
+					<h1>我們和其他人<span>不一樣</span></h1>
+					<p>我們的飲料和市面上賣的飲料非常不同，我們不只使用了完全新鮮的蔬果，還是利用了那些因為賣相而滯銷的水果製作的，不只健康好喝又環保。不只如此，我們還提供了多樣化的選擇，讓您喝到您想喝的蔬果組合，不只方便、環保、多樣又好喝。</p>
+					
+				</div>
+			</div>
+		</div><!-- /header-text -->
+		
+	</header>
+	<!-- /Sect
+
+	<div id="page-content">
+	
+		<!-- ////////////Overview Main Nav -->
+		<div class="no-gutter" id="overview-mainnav">
+			<div class="col-sm-4 col-xs-6 nav-item" data-nav="featured">
+				<div class="nav-item-inner">
+					<div class="nav-item-image gradient-5" style="background-image: url('{% static 'images/progess.jpg' %}')"></div>
+					<h3 class="sub-title">01.</h3>
+					<div class="nav-item-detail">
+						<h2 class="title"><strong>最準時&最有保障</strong> 服務</h2>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-6 nav-item" data-nav="slide">
+				<div class="nav-item-inner">
+					<div class="nav-item-image gradient-5" style="background-image: url('{% static 'images/progess2.jpg' %}')"></div>
+					<h3 class="sub-title">02.</h3>
+					<div class="nav-item-detail">
+						<h2 class="title"><strong>水果來自</strong> 台灣最有名盛產地</h2>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-6 nav-item" data-nav="team">
+				<div class="nav-item-inner">
+					<div class="nav-item-image gradient-5" style="background-image: url('{% static 'images/team.jpg' %}')"></div>
+					<h3 class="sub-title">03.</h3>
+					<div class="nav-item-detail">
+						<h2 class="title"><strong>無懈可擊</strong> 的團隊</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-6 nav-item" data-nav="gallery">
+				<div class="nav-item-inner">
+					<div class="nav-item-image gradient-5" style="background-image: url('{% static 'images/sun.jpg' %}')"></div>
+					<h3 class="sub-title">04.</h3>
+					<div class="nav-item-detail">
+						<h2 class="title"><strong>最充足與滋潤的</strong> 養分</h2>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-6 nav-item" data-nav="leader">
+				<div class="nav-item-inner">
+					<div class="nav-item-image gradient-5" style="background-image: url('{% static 'images/organic.jpg' %}')"></div>
+					<h3 class="sub-title">05.</h3>
+					<div class="nav-item-detail">
+						<h2 class="title"><strong>有機</strong>是我們的宗旨</h2>
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-xs-6 nav-item" data-nav="contact">
+				<div class="nav-item-inner">
+					<div class="nav-item-image gradient-5" style="background-image: url('{% static 'images/heart.jpg' %}')"></div>
+					<h3 class="sub-title">06.</h3>
+					<div class="nav-item-detail">
+						<h2 class="title"><strong>以顧客為上的</strong>心</h2>
+						
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+  
+
+			<div class="jumbotron" id="home">
+    <div class="intro">
+        <div class="container">
+
+            <div class="row">
+                <h1 class="text-center">訂單 <span>流程</span></h1>
+                   <br></br>
+
+			       <div class="container2">
+					      
+			    <div class="row smpl-step" style="border-bottom: 0; min-width: 1000px;">
+			        <div class="col-xs-2 smpl-step-step complete">
+			            <div class="text-center smpl-step-num">Step 1</div>
+			            <div class="progress">
+			                <div class="progress-bar"></div>
+			            </div>
+			            <a class="smpl-step-icon"><i class="fa fa-user" style="font-size: 80px; padding-left: 10px; padding-top: 10px; color: black;"></i></a>
+			            <br></br>
+			            <div class="smpl-step-info text-center">登入帳號</div>
+			        </div>
+
+			        <div class="col-xs-2 smpl-step-step complete">           
+			            <div class="text-center smpl-step-num">Step 2</div>
+			            <div class="progress">
+			                <div class="progress-bar"></div>
+			            </div>
+			            <a class="smpl-step-icon"><i class="fa fa-dollar" style="font-size: 80px; padding-left: 10px; padding-top: 10px; color: black;"></i></a>
+			            <br></br>
+			            <div class="smpl-step-info text-center">選擇你喜歡的飲料並且下訂單</div>
+			        </div>
+			        <div class="col-xs-2 smpl-step-step complete">          
+			            <div class="text-center smpl-step-num">Step 3</div>
+			            <div class="progress">
+			                <div class="progress-bar"></div>
+			            </div>
+			            <a class="smpl-step-icon"><i class="fa fa-check-square" style="font-size: 80px; padding-left: 10px; padding-top: 10px; color: black;"></i></a>
+			            <br></br>
+			            <div class="smpl-step-info text-center">確認訂單是否完成</div>
+			        </div>
+			        <div class="col-xs-2 smpl-step-step complete">           
+			            <div class="text-center smpl-step-num">Step 4</div>
+			            <div class="progress">
+			                <div class="progress-bar"></div>
+			            </div>
+			            <a class="smpl-step-icon"><i class="fa fa-adjust" style="font-size: 80px; padding-left: 10px; padding-top: 10px; color: black; "></i></a>
+			            <br></br>
+			            <div class="smpl-step-info text-center">1~2個工作天</div>
+			        </div>
+			         <div class="col-xs-2 smpl-step-step complete">           
+			            <div class="text-center smpl-step-num">Step 4</div>
+			            <div class="progress">
+			                <div class="progress-bar"></div>
+			            </div>
+			            <a class="smpl-step-icon"><i class="fa fa-truck" style="font-size: 80px; padding-left: 10px; padding-top: 10px; color: black; "></i></a>
+			            <br></br>
+			            <div class="smpl-step-info text-center">大約3個運送天</div>
+			        </div>
+                      <div class="col-xs-2 smpl-step-step complete">           
+			            <div class="text-center smpl-step-num">Step 4</div>
+			            <div class="progress">
+			                <div class="progress-bar"></div>
+			            </div>
+			            <a class="smpl-step-icon"><i class="fa fa-gift" style="font-size: 80px; padding-left: 6px; padding-top: 7px; color: black; "></i></a>
+			            <br></br>
+			            <div class="smpl-step-info text-center">貨物送達</div>
+			        </div>
+
+			    </div>
+			
+
+               
+            </div>
+            <div class="row triangles">
+                <div class="up-triangle animated fadeInUp">
+                    <div class="info">
+                        <i class="icon icon-thumbs-up"></i><br/>
+                        <h3>J</h3>
+                    </div>
+                </div>
+                <div class="down-triangle animated fadeInDown">
+                    <div class="info">
+
+                        
+                        <i class="icon icon-thumbs-up"></i><br/>
+                        <h3>u</h3>
+                    </div>
+                </div>
+                <div class="up-triangle animated fadeInUp">
+                    <div class="info">
+
+                        <i class="icon icon-thumbs-up"></i><br/>
+                        <h3>i</h3>
+                    </div>
+                </div>
+                <div class="down-triangle animated fadeInDown">
+                    <div class="info">
+
+                        
+                        <i class="icon icon-thumbs-up"></i><br/>
+                        <h3>c</h3>
+                    </div>
+                </div>
+
+                <div class="down-triangle animated fadeInDown visible-sm">
+                    <div class="info">
+
+                        Clean Code<br/>
+                        <i class="icon icon-code"></i>
+                    </div>
+                </div>
+
+                <div class="up-triangle animated fadeInUp">
+                    <div class="info">
+
+                        <i class="icon icon-thumbs-up"></i><br/>
+                         <h3>e</h3>
+                    </div>
+                </div>
+                <div class="down-triangle animated fadeInDown">
+                    <div class="info">
+
+                        
+                        <i class="icon icon-thumbs-up"></i><br/>
+                         <h3>愛</h3>
+                    </div>
+                </div>
+                <div class="up-triangle animated fadeInUp">
+                    <div class="info">
+
+                        <i class="icon icon-thumbs-up"></i><br/>
+                        <h3>喝</h3>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>   	
+
+   </div>
+
 	<!-- //different -->
 	<!-- team -->
 	<div class="team">
@@ -213,42 +614,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
 	<!-- //team -->
 	<!-- footer -->
 	<div class="footer">
 		<div class="container">
 			<div class="agile-footer-grids">
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>About</h3>
-					<p>Aenean cursus dignissim porta. Quisque mattis dolor sem, nec ultrices arcu consequat vel. Phasellus sollicitudin dui diam, et scelerisque nunc venenatis non. Cras dapibus, urna et pellentesque egestas</p>
+					<h3>關於我們</h3>
+					<p>我們是一群台科大的學生,希望藉由這樣的店來推廣醜蔬果的實用性,更推廣人們不要因為外觀而唾棄食物</p>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Events</h3>
+					<h3>活動資訊</h3>
 					<ul>
-						<li>12th Aug <a href="{% url 'juice:single' %}">Curabitur</a></li>
-						<li>10th Sept <a href="{% url 'juice:single' %}">Fusce urna</a></li>
-						<li>24th Sept <a href="{% url 'juice:single' %}">Praesent</a></li>
-						<li>17th Oct <a href="{% url 'juice:single' %}">Malesuada </a></li>
-						<li>09th Dec <a href="{% url 'juice:single' %}">Cum sociis</a></li>
+						<p>歡慶Juice愛喝開幕，每次消費皆可獲得拉霸抽獎乙次!!</p>
 					</ul>
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Navigation</h3>
+					<h3>站內連結</h3>
 					<ul>
-						<li class="text"><a href="{% url 'juice:about' %}">About</a></li>
-						<li class="text"><a href="{% url 'juice:typography' %}">Typography</a></li>
-						<li class="text"><a href="{% url 'juice:icons' %}">Icons</a></li>
-						<li class="text"><a href="{% url 'juice:gallery' %}">Gallery</a></li>
-						<li class="text"><a href="{% url 'juice:blog' %}">Blog</a></li>
-						<li class="text"><a href="{% url 'juice:contact' %}">Contact</a></li>
+						<li class="text"><a href="{% url 'juice:about' %}">關於我們</a></li>
+						<li class="text"><a href="{% url 'juice:gallery' %}">產品資訊</a></li>
+						<li class="text" id = "button_login"><a href="{% url 'juice:blog' %}">登入</a></li>
+						<li class="text"><a href="{% url 'juice:contact' %}">聯絡我們</a></li>
 					</ul>
+
+					<script>
+						if(document.getElementById('check').innerHTML != ""){
+							document.getElementById('button_login').style.display = "none";
+						}else{
+							document.getElementById('button_login').style.display = "block";
+						}
+					</script>
+
 				</div>
 				<div class="col-md-3 w3-agile-footer-grid">
-					<h3>Newsletter</h3>
-					<form action="#" method="post">
-						<input type="email" id="mc4wp_email" name="EMAIL" placeholder="Enter your email here" required="">
-						<input type="submit" value="Subscribe">
-					</form>
+					<h3>加盟專線</h3>
+					<ul>
+						<p>0800-123-456</p>
+					</ul>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -258,13 +667,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
-			<p>© 2017 Harvest Life . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+			<p>© Juice 愛喝 | Design by <a href="{% url 'juice:about' %}"> 第五組全體組員</a> </p>
 		</div>
 	</div>
 	<!-- //copyright -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -283,7 +692,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- parallax -->
-	<script src="js/jarallax.js"></script>
+	<script src="{% static 'js/jarallax.js' %}"></script>
 	<script type="text/javascript">
         /* init Jarallax */
         $('.jarallax').jarallax({

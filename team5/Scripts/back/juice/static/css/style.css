@@ -978,6 +978,7 @@ ul.dropdown-menu li{
 /*-- icons --*/
 .about-heading{
     padding:4em 0 0 0;
+    background-color: red;
 }
 .about-heading h2 {
     color: #b3bf06;
